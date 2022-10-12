@@ -87,11 +87,11 @@ async def bot_echo_all(message: types.Message, state: FSMContext):
         if message.text in My_Order.getListProducts(message.chat.id):
             My_Order.POST_PATH(message.chat.id, message.text)
             if My_Order.main(message.chat.id)[3] == '':
-                with open(f'/mnt/c/hakaton/zona1/utils/images/1.jpg', 'rb') as photo:
+                with open(f'utils/images/1.jpg', 'rb') as photo:
                     await message.answer_photo(photo)
                     photo.close()
             else:
-                with open(f'/mnt/c/hakaton/zona1/utils/{My_Order.main(message.chat.id)[3]}', 'rb') as photo:
+                with open(f'utils/{My_Order.main(message.chat.id)[3]}', 'rb') as photo:
                     await message.answer_photo(photo)
                     photo.close()
             # print(f'/utils/{My_Order.main(message.chat.id)[3]}')
